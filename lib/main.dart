@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 // main is the driver program
 void main(List<String> args) {
@@ -39,6 +39,45 @@ class Homepage extends StatelessWidget {
           child: const Text(
             "Messenger",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+}
+*/
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(MaterialApp(
+    title: "Cosmos App",
+    home: Homepage(),
+  ));
+}
+
+class Homepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Cosmos App"),
+      ),
+      body: Center(
+        child: Container(
+          height: 100,
+          width: 100,
+          alignment: Alignment.topCenter,
+          decoration: BoxDecoration(
+            color: Colors.blueGrey,
+            shape: BoxShape.rectangle,
+          ),
+          child: const Text(
+            "Cosmos App",
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 255, 136),
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ),
       ),
