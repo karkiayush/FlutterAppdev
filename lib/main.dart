@@ -68,15 +68,17 @@ class Homepage extends StatelessWidget {
           height: 100,
           width: 100,
           alignment: Alignment.topCenter,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.blueGrey,
             shape: BoxShape.rectangle,
           ),
           child: const Text(
             "Cosmos App",
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: Color.fromARGB(255, 0, 255, 136),
               fontWeight: FontWeight.w700,
+              fontSize: 20,
             ),
           ),
         ),
