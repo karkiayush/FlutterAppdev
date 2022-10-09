@@ -68,7 +68,7 @@ class Homepage extends StatelessWidget {
           height: 100,
           width: 100,
           alignment: Alignment.topCenter,
-          decoration: const BoxDecoration(
+          decoration: const BoxDecoration( 
             color: Colors.blueGrey,
             shape: BoxShape.rectangle,
           ),
