@@ -1,61 +1,18 @@
-/*import 'package:flutter/material.dart';
-
-// main is the driver program
-void main(List<String> args) {
-  runApp(MaterialApp(
-    title: "Messenger",
-    home: Homepage(),
-  ));
-}
-
-class Homepage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Messenger")),
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          padding: const EdgeInsets.all(14),
-          // color: Colors.greenAccent,
-          width: 100,
-          height: 100,
-          decoration: const BoxDecoration(
-            color: Colors.greenAccent,
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 50,
-                  spreadRadius: 6,
-                  offset: Offset(2.0, 10.0))
-            ],
-            gradient: LinearGradient(colors: [
-              Colors.yellowAccent,
-              Color.fromARGB(255, 102, 97, 98)
-            ]),
-            shape: BoxShape.circle,
-          ),
-
-          child: const Text(
-            "Messenger",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/
-
+// Here I learned about the material drawer, List view and circle avatar & Floating action buttons
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
     title: "Cosmos App",
     home: Homepage(),
+    theme: ThemeData(
+      // Swatch is the collection of colors in material design that takes the colors and automatically makes the design colorful and add up the extra beauty to the design
+      primarySwatch: Colors.brown,
+    ),
   ));
 }
 
+// ignore: use_key_in_widget_constructors
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -63,25 +20,62 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Cosmos App"),
       ),
-      body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          alignment: Alignment.topCenter,
-          decoration: const BoxDecoration( 
-            color: Colors.blueGrey,
-            shape: BoxShape.rectangle,
-          ),
-          child: const Text(
-            "Cosmos App",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color.fromARGB(255, 0, 255, 136),
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
+
+      // DESIGNING THE FLOATING ACTION BUTTON
+      body: Container(),
+
+      // to add the drawer icon indicated by three small parallel lines and the below code must be located inside of " return scaffold ()"
+      drawer: Drawer(
+        child: ListView(
+          //padding makes the drawer colors to reach the top position
+          padding: EdgeInsets.zero,
+
+          children: const <Widget>[
+            // DrawerHeader(
+            //   // ignore: sort_child_properties_last
+            //   child: Text(
+            //     "Dashboard",
+            //     style: TextStyle(color: Colors.white),
+            //   ),
+            //   decoration: BoxDecoration(color: Colors.blueAccent),
+            // ),
+
+            UserAccountsDrawerHeader(
+              accountName: Text("Aayush Karki"),
+              accountEmail: Text("Akrk213@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+              ),
             ),
-          ),
+
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("personal"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Result"),
+            ),
+            ListTile(
+              title: Text("Records"),
+              leading: Icon(Icons.app_registration_rounded),
+            ),
+          ],
         ),
+      ),
+
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, // makes the icon position on the center of buttom
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        // ignore: sort_child_properties_last
+        child: const Icon(
+          Icons.edit,
+        ),
+        // mini makes the icons smaller
+        mini: true,
       ),
     );
   }
