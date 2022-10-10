@@ -1,4 +1,4 @@
-// Here I learned about the material drawer, List view and circle avatar & Floating action buttons
+/*// Here I learned about the material drawer, List view and circle avatar & Floating action buttons
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -77,6 +77,41 @@ class Homepage extends StatelessWidget {
         // mini makes the icons smaller
         mini: true,
       ),
+    );
+  }
+}
+*/
+
+// Src code of practise of chapter where I learned about the drawer, list view, circle avatar and the floating action button
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  // ignore: prefer_const_constructors
+  runApp(MaterialApp(
+    title: "Online Attendance",
+    home: Homepage(),
+  ));
+}
+
+class Homepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // ignore: prefer_const_constructors
+        title: Center(
+          child: const Text(
+            "Online Attendance",
+            style: TextStyle(
+                color: Colors.white,
+                fontStyle: FontStyle.normal,
+                fontFamily: 'Fira'),
+          ),
+        ),
+      ),
+      body: Container(),
+      drawer: const Drawer(),
     );
   }
 }
