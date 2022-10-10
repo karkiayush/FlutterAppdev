@@ -91,6 +91,7 @@ void main(List<String> args) {
   runApp(MaterialApp(
     title: "Online Attendance",
     home: Homepage(),
+    theme: ThemeData.light().copyWith(textTheme: const TextTheme()),
   ));
 }
 
@@ -111,7 +112,50 @@ class Homepage extends StatelessWidget {
         ),
       ),
       body: Container(),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: const <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Steven Smith"),
+              accountEmail: Text("smithysteven49@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+              ),
+            ),
+            ListTile(
+              title: Text("Present record"),
+              leading: Icon(Icons.computer),
+              subtitle: Text("days"),
+            ),
+            ListTile(
+              leading: Icon(Icons.event_available),
+              title: Text("Absent record"),
+              subtitle: Text("days"),
+            ),
+            ListTile(
+              leading: Icon(Icons.assessment),
+              title: Text("Results"),
+            ),
+            ListTile(
+              title: Text("Assignments"),
+              leading: Icon(Icons.assignment),
+            ),
+            ListTile(
+              title: Text("Contact with Administration "),
+              leading: Icon(Icons.contact_phone),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text("Manage your google account"),
+              subtitle: Text(
+                "more",
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
