@@ -93,48 +93,79 @@ void main(List<String> args) {
   ));
 }
 
+// ignore: use_key_in_widget_constructors
 class Homepage extends StatelessWidget {
+  // ignore: annotate_overrides
   Widget build(BuildContext context) {
     return Scaffold(
       // ignore: prefer_const_constructors
       appBar: AppBar(title: Text("Personal Infomation")),
 
-      body: Center(
-        child: Row(
-          // "spacebetween" : creates the gap between the container box, but don't leaves the space between the border and side containers
+      // ignore: avoid_unnecessary_containers
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
 
-          //spacearound : spacebetween + space in the side container as well
+        // To move the container in any position, we need to use the wrap container with Allign widget
+        child: Align(
+          // alignment: AlignmentGeometry.,
+          child: Container(
+            // This line of codes gives the whole screen to the Row
+            height: 320,
+            width: 100,
 
-          //spaceEvenly : leaves equal space between the all of the containers
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // First container
-            Container(
-              // ignore: prefer_const_constructors
-              padding: EdgeInsets.all(0),
-              height: 100,
-              width: 100,
-              color: Colors.red,
+            // So if we give the color to the container then whole background color will be black
+            color: Colors
+                .blueGrey, //IF we comment out the above media query syntax then only the first row's background color will be greyish
+
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                // "spacebetween" : creates the gap between the container box, but don't leaves the space between the border and side containers
+
+                //spacearound : spacebetween + space in the side container as well
+
+                //spaceEvenly : leaves equal space between the all of the containers
+                mainAxisAlignment: MainAxisAlignment.start,
+
+                /*THE BELOW CROSS AXIS ALLIGNMENT FOR CENTER AND END DOESN'T WORK SINCE THE ROW WILL BE APPLIED ONLY FOR THE TOP OF THE TOP OF THE SCAFFOLD WHEN WE DON'T WRAP THE ROW WITH CENTER */
+
+                // crossAxisAlignment: CrossAxisAlignment.end,
+
+                // crossAxisAlignment: CrossAxisAlignment.center,
+
+                crossAxisAlignment: CrossAxisAlignment.center,
+
+                children: [
+                  // First container
+                  Container(
+                    // ignore: prefer_const_constructors
+                    padding: EdgeInsets.all(0),
+                    height: 100,
+                    width: 100,
+                    color: Colors.black,
+                  ),
+
+                  // Second container
+                  Container(
+                    // ignore: prefer_const_constructors
+                    padding: EdgeInsets.all(0),
+                    height: 100,
+                    width: 100,
+                    color: Color.fromARGB(255, 232, 181, 16),
+                  ),
+
+                  // Third container
+                  Container(
+                    // ignore: prefer_const_constructors
+                    padding: EdgeInsets.all(0),
+                    height: 100,
+                    width: 100,
+                    color: Colors.purple,
+                  ),
+                ],
+              ),
             ),
-
-            // Second container
-            Container(
-              // ignore: prefer_const_constructors
-              padding: EdgeInsets.all(0),
-              height: 100,
-              width: 100,
-              color: Colors.yellow,
-            ),
-
-            // Third container
-            Container(
-              // ignore: prefer_const_constructors
-              padding: EdgeInsets.all(0),
-              height: 100,
-              width: 100,
-              color: Colors.green,
-            ),
-          ],
+          ),
         ),
       ),
     );
