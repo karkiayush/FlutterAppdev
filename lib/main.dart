@@ -82,77 +82,58 @@ class Homepage extends StatelessWidget {
 }
 */
 
-// Src code of practise of chapter where I learned about the drawer, list view, circle avatar and the floating action button
-
+// Row and Columns in dart
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   // ignore: prefer_const_constructors
   runApp(MaterialApp(
-    title: "Online Attendance",
+    title: "Personal Information",
     home: Homepage(),
-    theme: ThemeData.light().copyWith(textTheme: const TextTheme()),
   ));
 }
 
 class Homepage extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // ignore: prefer_const_constructors
-        title: Center(
-          child: const Text(
-            "Online Attendance",
-            style: TextStyle(
-                color: Colors.white,
-                fontStyle: FontStyle.normal,
-                fontFamily: 'Fira'),
-          ),
-        ),
-      ),
-      body: Container(),
-      drawer: Drawer(
-        child: ListView(
-          children: const <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text("Steven Smith"),
-              accountEmail: Text("smithysteven49@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1599842057874-37393e9342df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
-              ),
+      // ignore: prefer_const_constructors
+      appBar: AppBar(title: Text("Personal Infomation")),
+
+      body: Center(
+        child: Row(
+          // "spacebetween" : creates the gap between the container box, but don't leaves the space between the border and side containers
+
+          //spacearound : spacebetween + space in the side container as well
+
+          //spaceEvenly : leaves equal space between the all of the containers
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // First container
+            Container(
+              // ignore: prefer_const_constructors
+              padding: EdgeInsets.all(0),
+              height: 100,
+              width: 100,
+              color: Colors.red,
             ),
-            ListTile(
-              title: Text("Present record"),
-              leading: Icon(Icons.computer),
-              subtitle: Text("days"),
+
+            // Second container
+            Container(
+              // ignore: prefer_const_constructors
+              padding: EdgeInsets.all(0),
+              height: 100,
+              width: 100,
+              color: Colors.yellow,
             ),
-            ListTile(
-              leading: Icon(Icons.event_available),
-              title: Text("Absent record"),
-              subtitle: Text("days"),
+
+            // Third container
+            Container(
+              // ignore: prefer_const_constructors
+              padding: EdgeInsets.all(0),
+              height: 100,
+              width: 100,
+              color: Colors.green,
             ),
-            ListTile(
-              leading: Icon(Icons.assessment),
-              title: Text("Results"),
-            ),
-            ListTile(
-              title: Text("Assignments"),
-              leading: Icon(Icons.assignment),
-            ),
-            ListTile(
-              title: Text("Contact with Administration "),
-              leading: Icon(Icons.contact_phone),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text("Manage your google account"),
-              subtitle: Text(
-                "more",
-                style: TextStyle(fontWeight: FontWeight.w600),
-              ),
-            )
           ],
         ),
       ),
