@@ -1,5 +1,7 @@
-/*// Here I learned about the material drawer, List view and circle avatar & Floating action buttons
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
+
+// Here I learned about the material drawer, List view and circle avatar & Floating action buttons
+/*import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
@@ -82,90 +84,161 @@ class Homepage extends StatelessWidget {
 }
 */
 
-// Row and Columns in dart
+// /*In this chapter, we learned :
+// Row || Column ||
+// */
+
+// // Row and Columns in dart
+// import 'package:flutter/material.dart';
+
+// void main(List<String> args) {
+//   // ignore: prefer_const_constructors
+//   runApp(MaterialApp(
+//     title: "Personal Information",
+//     home: Homepage(),
+//   ));
+// }
+
+// // ignore: use_key_in_widget_constructors
+// class Homepage extends StatelessWidget {
+//   // ignore: annotate_overrides
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       // ignore: prefer_const_constructors
+//       appBar: AppBar(title: Text("Personal Infomation")),
+
+//       // ignore: avoid_unnecessary_containers
+//       body: Padding(
+//         padding: const EdgeInsets.all(10.0),
+
+//         // To move the container in any position, we need to use the wrap container with Allign widget
+//         child: Align(
+//           /*Column vaneko vertical (Thado) hunxa, so hamile allignment chai center ma garim vane thado line ko midpointer bata equal 2 parts ma divide hunxa . Further if we use the properties like the centerleft, center ma rahera left patti janxa and same is for the right*/
+//           alignment: Alignment.center,
+//           // alignment: AlignmentGeometry.,
+//           child: Container(
+//             // This line of codes gives the whole screen to the Row
+//             height: 320,
+//             width: 100,
+
+//             // So if we give the color to the container then whole background color will be black
+//             color: Colors
+//                 .blueGrey, //IF we comment out the above media query syntax then only the first row's background color will be greyish
+
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Column(
+//                 // "spacebetween" : creates the gap between the container box, but don't leaves the space between the border and side containers
+
+//                 //spacearound : spacebetween + space in the side container as well
+
+//                 //spaceEvenly : leaves equal space between the all of the containers
+//                 mainAxisAlignment: MainAxisAlignment.start,
+
+//                 /*THE BELOW CROSS AXIS ALLIGNMENT FOR CENTER AND END DOESN'T WORK SINCE THE ROW WILL BE APPLIED ONLY FOR THE TOP OF THE TOP OF THE SCAFFOLD WHEN WE DON'T WRAP THE ROW WITH CENTER */
+
+//                 // crossAxisAlignment: CrossAxisAlignment.end,
+
+//                 // crossAxisAlignment: CrossAxisAlignment.center,
+
+//                 crossAxisAlignment: CrossAxisAlignment.center,
+
+//                 children: [
+//                   // First container
+//                   Container(
+//                     // ignore: prefer_const_constructors
+//                     padding: EdgeInsets.all(0),
+//                     height: 100,
+//                     width: 100,
+//                     color: Colors.black,
+//                   ),
+
+//                   // Second container
+//                   Container(
+//                     // ignore: prefer_const_constructors
+//                     padding: EdgeInsets.all(0),
+//                     height: 100,
+//                     width: 100,
+//                     color: Color.fromARGB(255, 232, 181, 16),
+//                   ),
+
+//                   // Third container
+//                   Container(
+//                     // ignore: prefer_const_constructors
+//                     padding: EdgeInsets.all(0),
+//                     height: 100,
+//                     width: 100,
+//                     color: Colors.purple,
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  // ignore: prefer_const_constructors
   runApp(MaterialApp(
-    title: "Personal Information",
+    title: "Programming Compiler",
     home: Homepage(),
   ));
 }
 
 // ignore: use_key_in_widget_constructors
 class Homepage extends StatelessWidget {
-  // ignore: annotate_overrides
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // ignore: prefer_const_constructors
-      appBar: AppBar(title: Text("Personal Infomation")),
-
-      // ignore: avoid_unnecessary_containers
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-
-        // To move the container in any position, we need to use the wrap container with Allign widget
-        child: Align(
-          // alignment: AlignmentGeometry.,
-          child: Container(
-            // This line of codes gives the whole screen to the Row
-            height: 320,
-            width: 100,
-
-            // So if we give the color to the container then whole background color will be black
-            color: Colors
-                .blueGrey, //IF we comment out the above media query syntax then only the first row's background color will be greyish
-
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                // "spacebetween" : creates the gap between the container box, but don't leaves the space between the border and side containers
-
-                //spacearound : spacebetween + space in the side container as well
-
-                //spaceEvenly : leaves equal space between the all of the containers
-                mainAxisAlignment: MainAxisAlignment.start,
-
-                /*THE BELOW CROSS AXIS ALLIGNMENT FOR CENTER AND END DOESN'T WORK SINCE THE ROW WILL BE APPLIED ONLY FOR THE TOP OF THE TOP OF THE SCAFFOLD WHEN WE DON'T WRAP THE ROW WITH CENTER */
-
-                // crossAxisAlignment: CrossAxisAlignment.end,
-
-                // crossAxisAlignment: CrossAxisAlignment.center,
-
-                crossAxisAlignment: CrossAxisAlignment.center,
-
-                children: [
-                  // First container
-                  Container(
-                    // ignore: prefer_const_constructors
-                    padding: EdgeInsets.all(0),
-                    height: 100,
-                    width: 100,
-                    color: Colors.black,
-                  ),
-
-                  // Second container
-                  Container(
-                    // ignore: prefer_const_constructors
-                    padding: EdgeInsets.all(0),
-                    height: 100,
-                    width: 100,
-                    color: Color.fromARGB(255, 232, 181, 16),
-                  ),
-
-                  // Third container
-                  Container(
-                    // ignore: prefer_const_constructors
-                    padding: EdgeInsets.all(0),
-                    height: 100,
-                    width: 100,
-                    color: Colors.purple,
-                  ),
-                ],
+      appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 254, 95, 3),
+          title: Text(
+            "Programming Compiler",
+            style: TextStyle(color: Color.fromARGB(255, 248, 248, 30)),
+          )),
+      body: Container(
+        color: Colors.teal,
+        // child:,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          // padding: EdgeInsets.,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            DrawerHeader(
+              // ignore: sort_child_properties_last
+              child: Text(
+                "DashBoard",
+                style: TextStyle(color: Colors.white),
               ),
+              decoration: BoxDecoration(color: Colors.blueGrey),
+              // padding: EdgeInsets.all(70),
             ),
-          ),
+            ListTile(
+              leading: Icon(Icons.terminal),
+              title: Text("Terminal"),
+            ),
+            ListTile(
+              leading: Icon(Icons.laptop),
+              title: Text("Editor"),
+            ),
+            ListTile(
+              leading: Icon(Icons.model_training),
+              title: Text("Sample Code "),
+            ),
+            ListTile(
+              leading: Icon(Icons.history),
+              title: Text("Recent codes"),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle_outlined),
+              title: Text("profile"),
+            ),
+          ],
         ),
       ),
     );
