@@ -184,7 +184,9 @@ import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: "Programming Compiler",
+    theme: ThemeData(fontFamily: 'Fira'),
     home: Homepage(),
   ));
 }
@@ -198,7 +200,14 @@ class Homepage extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 254, 95, 3),
           title: Text(
             "Programming Compiler",
-            style: TextStyle(color: Color.fromARGB(255, 248, 248, 30)),
+            style: TextStyle(
+                color: Color.fromARGB(
+                  255,
+                  248,
+                  248,
+                  30,
+                ),
+                fontFamily: 'Fira'),
           )),
       body: Container(
         color: Colors.teal,
@@ -209,34 +218,92 @@ class Homepage extends StatelessWidget {
           // padding: EdgeInsets.,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            DrawerHeader(
-              // ignore: sort_child_properties_last
-              child: Text(
-                "DashBoard",
-                style: TextStyle(color: Colors.white),
+            // DrawerHeader(
+            //   // ignore: sort_child_properties_last
+            //   child: Text(
+            //     "DashBoard",
+            //     style: TextStyle(color: Colors.white, fontFamily: 'Fira'),
+            //   ),
+            //   decoration: BoxDecoration(color: Colors.blueGrey),
+            //   // padding: EdgeInsets.all(70),
+            // ),
+
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
+              accountName: Text(
+                "Aayush Karki",
+                style: TextStyle(fontFamily: 'bold1'),
               ),
-              decoration: BoxDecoration(color: Colors.blueGrey),
-              // padding: EdgeInsets.all(70),
+              accountEmail: Text(
+                "KarkiAayush499@gmail.com",
+                style: TextStyle(fontFamily: 'bold1'),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.terminal),
-              title: Text("Terminal"),
+
+            Container(
+              child: ListTile(
+                leading: Icon(Icons.terminal),
+                title: Text(
+                  "Terminal",
+                  style: TextStyle(
+                    fontFamily: 'Fira',
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.laptop),
-              title: Text("Editor"),
+              title: Text(
+                "Editor",
+                style: TextStyle(
+                  fontFamily: 'Fira',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.model_training),
-              title: Text("Sample Code "),
+              title: Text(
+                "Sample Code ",
+                style: TextStyle(
+                  fontFamily: 'Fira',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.history),
-              title: Text("Recent codes"),
+              title: Text(
+                "Recent codes",
+                style: TextStyle(
+                  fontFamily: 'Fira',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  // backgroundColor: Colors.blue
+                  // fontStyle: FontStyle.italic
+                ),
+              ),
             ),
             ListTile(
-              leading: Icon(Icons.account_circle_outlined),
-              title: Text("profile"),
+              leading: Icon(Icons.workspace_premium),
+              title: Text(
+                "Premium",
+                style: TextStyle(
+                  fontFamily: 'Fira',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),
