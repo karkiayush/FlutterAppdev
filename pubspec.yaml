@@ -82,8 +82,15 @@ flutter:
     - family: bold1
       fonts:
         - asset: fonts/Changa-SemiBold.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+    #       - asset: fonts/TrajanPro_Bold.ttf
+    #         weight: 700
+    - family: cursive1
+      fonts:
+        - asset: fonts/LobsterTwo-Italic.ttf
+
+    - family: cursive2
+      fonts:
+        - asset: fonts/Satisfy-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 void main(List<String> args) {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: "Banking App",
+    title: "To do list",
     home: Homepage(),
   ));
 }
@@ -15,55 +15,101 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 192, 186, 186),
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text(
-          "Banking App",
+          "To do list",
           style: TextStyle(fontFamily: "fira"),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
-      // body: Center(child: Card()),
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.white,
+      body: Center(
+          child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Card(
+          child: Column(
+            // ignore: prefer_const_literals_to_create_immutables
+            children: <Widget>[
+              Image.asset("assets/bg3.jpg"),
+              //this below sized box doesn't seems but helps in giving space in between two widgest. Here it makes the space between the image and the Text("to do list ")
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  SizedBox(
+                    width: 140,
+                  ),
+                  Text(
+                    "To do list",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'cursive2',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 120,
+                  ),
+                  Icon(Icons.note_alt_sharp)
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: "Enter things to do",
+                      border: OutlineInputBorder(),
+                      labelText: "Task"),
+                ),
+              )
+            ],
           ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.black,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.white,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.black,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.white,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.black,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height / 8,
-            width: MediaQuery.of(context).size.width / 8,
-            color: Colors.white,
-          ),
-        ],
-      ),
+        ),
+      )),
+
+      // body: Column(
+      //   children: [
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.white,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.black,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.white,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.black,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.white,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.black,
+      //     ),
+      //     Container(
+      //       height: MediaQuery.of(context).size.height / 8,
+      //       width: MediaQuery.of(context).size.width / 8,
+      //       color: Colors.white,
+      //     ),
+      //   ],
+      // ),
       drawer: Drawer(
         // ignore: prefer_const_literals_to_create_immutables
         child: ListView(children: [
