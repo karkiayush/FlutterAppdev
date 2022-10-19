@@ -74,7 +74,7 @@ flutter:
 
   # FONTS
   fonts:
-    - family: Fira
+    - family: fira
       fonts:
         - asset: fonts/FiraSans-Regular.ttf
     #       - asset: fonts/Schyler-Italic.ttf
