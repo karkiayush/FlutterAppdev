@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -29,7 +31,6 @@ class _ToDoAppState extends State<ToDoApp> {
         centerTitle: true,
       ),
       body: ListView(
-        // ignore: prefer_const_literals_to_create_immutables
         children: [
           TextFormField(),
           ListTile(
@@ -40,16 +41,26 @@ class _ToDoAppState extends State<ToDoApp> {
             title: Text("Eat"),
             leading: Icon(Icons.dinner_dining),
           ),
-          ListTile(
-            title: Text("Code"),
-            leading: Icon(Icons.computer_rounded),
-          ),
+          // ListTile(
+          //   title: Text("Code"),
+          //   leading: Icon(Icons.computer_rounded),
+          // ),
           Row(
             children: [
-              Image.asset('/lib/icons/sleep.png'),
-              ListTile(
-                title: Text("Sleep"),
+              SizedBox(
+                width: 20,
               ),
+              Image.asset(
+                'lib/icons/code.png',
+                height: 25,
+                width: 25,
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Text("Code",
+                  style: TextStyle(
+                      fontFamily: 'bold1', fontWeight: FontWeight.w800)),
             ],
           ),
         ],
