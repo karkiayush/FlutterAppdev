@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firstapp/bgimage.dart';
+import 'package:firstapp/drawer.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -58,7 +60,7 @@ class _HomepageState extends State<Homepage> {
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
-                Image.asset("assets/bg3.jpg"),
+                bgImage(),
                 //this below sized box doesn't seems but helps in giving space in between two widgest. Here it makes the space between the image and the Text("to do list ")
                 SizedBox(
                   height: 20,
@@ -116,83 +118,47 @@ class _HomepageState extends State<Homepage> {
           ),
         )),
 
-        // body: Column(
-        //   children: [
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.white,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.black,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.white,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.black,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.white,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.black,
-        //     ),
-        //     Container(
-        //       height: MediaQuery.of(context).size.height / 8,
-        //       width: MediaQuery.of(context).size.width / 8,
-        //       color: Colors.white,
-        //     ),
-        //   ],
-        // ),
-        drawer: Drawer(
-          // ignore: prefer_const_literals_to_create_immutables
-          child: ListView(children: [
-            SizedBox(
-              height: 160,
-              // width: 100,
-              child: UserAccountsDrawerHeader(
-                accountName: Text("Prezwol Rana"),
-                accountEmail: Text("ranaprezwol299@gmail.com"),
-                currentAccountPicture: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")),
-                // decoration: BoxDecoration(borderRadius:)),
-              ),
+        /*body: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.white,
             ),
-            ListTile(
-              leading: Icon(Icons.account_balance_outlined),
-              title: Text("Account Information"),
-              trailing: Icon(Icons.edit),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.black,
             ),
-            ListTile(
-              leading: Icon(Icons.data_exploration_sharp),
-              title: Text("Transaction"),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.white,
             ),
-            ListTile(
-              leading: Icon(Icons.account_balance_outlined),
-              title: Text(""),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.black,
             ),
-            ListTile(
-              leading: Icon(Icons.account_balance_outlined),
-              title: Text("Account Information"),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.white,
             ),
-            ListTile(
-              leading: Icon(Icons.account_balance_outlined),
-              title: Text("Account Information"),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.black,
             ),
-          ]),
-        ),
+            Container(
+              height: MediaQuery.of(context).size.height / 8,
+              width: MediaQuery.of(context).size.width / 8,
+              color: Colors.white,
+            ),
+          ],
+        ),*/
+
+        drawer: MyDrawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: Icon(Icons.refresh),
