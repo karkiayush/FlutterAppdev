@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_string_interpolations
 import 'package:flutter/material.dart';
 import 'package:todoapp/drawer.dart';
 import 'package:todoapp/listview.dart';
@@ -16,6 +16,14 @@ class ToDoApp extends StatefulWidget {
 }
 
 class _ToDoAppState extends State<ToDoApp> {
+  var listToDo = ['Hi, there'];
+
+  addToDo(String item) {
+    setState(() {
+      listToDo.add(item);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +37,22 @@ class _ToDoAppState extends State<ToDoApp> {
         ),
         centerTitle: true,
       ),
-      body: listView(),
+      // body: listView(),
+      body: ListView.builder(
+          itemCount: listToDo.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('${listToDo[index]}'),
+            );
+          }),
       drawer: DRAWER(),
+      floatingActionButton: Container(
+        padding: EdgeInsets.all(15),
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
+      ),
     );
   }
 }
