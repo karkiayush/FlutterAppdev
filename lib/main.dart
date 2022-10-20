@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -149,8 +147,35 @@ class _ToDoAppState extends State<ToDoApp> {
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-                accountName: Text("Mike Banning"),
-                accountEmail: Text("BanningMike214@gmail.com")),
+              accountName: Text(
+                "Mike Banning",
+                style: TextStyle(
+                  fontFamily: 'fira',
+                  fontSize: 15,
+                ),
+              ),
+              accountEmail: Row(children: [
+                Text(
+                  "BanningMike214@gmail.com",
+                  style: TextStyle(
+                    fontFamily: 'fira',
+                    fontSize: 15,
+                  ),
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Image.asset(
+                  'lib/icons/accounticon.png',
+                  height: 30,
+                  width: 30,
+                )
+              ]),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://cdn.justjared.com/wp-content/uploads/headlines/2020/11/gerard-butler-returns-for-fallen-movie.jpg"),
+              ),
+            ),
             ListTile(),
           ],
         ),
