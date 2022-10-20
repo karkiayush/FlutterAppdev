@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class Drawer extends StatelessWidget {
+// ignore: use_key_in_widget_constructors
+class DRAWER extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
