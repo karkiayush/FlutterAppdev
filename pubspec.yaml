@@ -75,6 +75,10 @@ flutter:
     - family: fira
       fonts:
         - asset: fonts/FiraSans-Regular.ttf
+
+    - family: changaMed
+      fonts:
+        - asset: fonts/Changa-Medium.ttf
     #       - asset: fonts/Schyler-Italic.ttf
     #         style: italic
     - family: bold1
@@ -89,6 +93,7 @@ flutter:
     - family: cursive2
       fonts:
         - asset: fonts/Satisfy-Regular.ttf
+
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
