@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,10 +19,11 @@ class Home extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: Colors.transparent)); //for the transparent status bar
     return Scaffold(
+      backgroundColor: tdBGColor,
       appBar: AppBar(
+        elevation: 0,
         toolbarHeight: 70,
         backgroundColor: tdBGColor,
-        // ignore: prefer_const_literals_to_create_immutables
         title: Row(
             //the mainAxisAllignment space between makes the text and image apart at two opposite end of row
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,6 +37,9 @@ class Home extends StatelessWidget {
                     child: Image.asset('lib/iconandimage/profileimg1.jpg')),
               )
             ]),
+      ),
+      body: Container(
+        child: Column(children: [Container()]),
       ),
       // appBar: AppBar(
       //   backgroundColor: Colors.purple,
