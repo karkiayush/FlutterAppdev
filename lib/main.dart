@@ -16,8 +16,8 @@ class ToDoApp extends StatefulWidget {
 }
 
 class _ToDoAppState extends State<ToDoApp> {
+//TO MAKE THE DYNAMIC TO DO APP
   var listToDo = ['Hi, there'];
-
   addToDo(String item) {
     setState(() {
       listToDo.add(item);
