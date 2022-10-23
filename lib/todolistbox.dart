@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, avoid_print
+// ignore_for_file: prefer_const_constructors, camel_case_types, avoid_print, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 
@@ -20,26 +20,35 @@ class toDoListBox extends StatelessWidget {
         child: Card(
           child: Container(
             height: 50,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                // boxShadow: [
-                //   BoxShadow(
-                //       color: Colors.grey,
-                //       offset: const Offset(
-                //         2.0,
-                //         2.0,
-                //       ))
-                // ],
-                borderRadius: BorderRadius.all(Radius.circular(20))),
-
-            // For the icons of the checkbox in the container
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 300, 0),
-              child: Icon(
-                Icons.check_box_outlined,
-                color: Colors.blue,
-              ),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(
+                  Icons.check_circle_outlined,
+                  color: Colors.blue,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                  child: Text('Check email',
+                      style: TextStyle(fontFamily: 'fira', fontSize: 20)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
+                  child: GestureDetector(
+                      onTap: () {
+                        print("to do are deleted");
+                      },
+                      child: Container(
+                        child: Icon(
+                          Icons.delete,
+                          color: Colors.black,
+                          size: 25,
+                        ),
+                      )),
+                ),
+              ],
             ),
           ),
         ),
