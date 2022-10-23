@@ -9,7 +9,7 @@ class toDoListBox extends StatelessWidget {
   Widget build(BuildContext context) {
     //Making the list of the to items
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 3),
 
       // Making the container of the to do items
       child: GestureDetector(
@@ -32,7 +32,7 @@ class toDoListBox extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
                   child: Text('Check email',
-                      style: TextStyle(fontFamily: 'fira', fontSize: 20)),
+                      style: TextStyle(fontFamily: 'fira', fontSize: 20,)),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),

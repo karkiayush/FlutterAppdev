@@ -1,7 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
 import 'colors/colors.dart';
 
 class titleBar extends StatelessWidget {
@@ -13,7 +12,13 @@ class titleBar extends StatelessWidget {
         //the mainAxisAllignment space between makes the text and image apart at two opposite end of row
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Icon(Icons.menu, color: tdBlack, size: 30),
+          GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.menu,
+                color: tdBlack,
+                size: 30,
+              )),
           // ignore: sized_box_for_whitespace
           Container(
             height: 50,

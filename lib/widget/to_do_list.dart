@@ -7,7 +7,6 @@ class toDoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Wrapping up the textfield by the card
     return Card(
       elevation: 10,
       // making the edges of the card abit rounded

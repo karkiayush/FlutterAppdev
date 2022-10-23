@@ -9,7 +9,7 @@ class allToDo extends StatelessWidget {
   Widget build(BuildContext context) {
     //  Needed to wrap with container so that the padding can be implemented from right side to make the text "All ToDos" to the left most part
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 0, 200, 0),
+      padding: EdgeInsets.fromLTRB(0, 10, 220, 0),
       child: Container(
         child: Text(
           "All ToDo",

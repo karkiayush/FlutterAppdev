@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todoapp1/alltodo.dart';
 import 'package:todoapp1/colors/colors.dart';
+import 'package:todoapp1/dynamicCoding/model.dart';
 import 'package:todoapp1/titlebar.dart';
 import 'package:todoapp1/todolistbox.dart';
 import 'package:todoapp1/widget/to_do_list.dart';
@@ -16,6 +17,7 @@ void main(List<String> args) {
 }
 
 class Home extends StatelessWidget {
+  final todosList = ToDo.todoList();
   @override
   Widget build(BuildContext context) {
     /*For making the status bar to be transparent*/
@@ -50,7 +52,10 @@ class Home extends StatelessWidget {
 
             // Column is for stacking
             Column(
-              children: [allToDo(), toDoListBox()],
+              children: [
+                allToDo(),
+                toDoListBox(),
+              ],
             ),
           ],
         ),
